@@ -130,9 +130,9 @@ function jogar() {
       obstaculos.splice(i, 1);
       if (vidas <= 0) {
         jogoAtivo = false;
-        if (pontuacao > recorde) {
-          recorde = pontuacao;
-          storeItem("recorde", recorde);
+        if (pontuacao > trofeus) {
+          trofeus = pontuacao;
+          storeItem("recorde", trofeus);
         }
         musica.stop();
       }
@@ -170,7 +170,7 @@ function telaGameOver() {
   text("🍉 Melancias: " + contagemMelancia, width / 2, height / 2 - 20);
   text("🌽 Milhos: " + contagemMilho, width / 2, height / 2 + 10);
   text("🥕 Cenouras: " + contagemCenoura, width / 2, height / 2 + 40);
-  text("🏆 Recorde: " + recorde, width / 2, height / 2 + 80);
+  text("🏆 Trofeus: " + trofeu, width / 2, height / 2 + 80);
   text("Pressione 'R' para reiniciar", width / 2, height / 2 + 120);
 }
 
