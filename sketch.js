@@ -57,7 +57,7 @@ function telaInicial() {
   rect(0, 0, width, height);
   fill(255);
   textSize(36);
-  text("🚛 \ Race of crazy emojis 👾", width / 2, height / 2 - 60);
+  text("🚛Race of crazy emojis👾", width / 2, height / 2 - 60);
   textSize(20);
   text("Use as setas ↑ e ↓ para mover o caminhão", width / 2, height / 2 - 10);
   text("Colete os alimentos e evite os obstáculos!", width / 2, height / 2 + 20);
