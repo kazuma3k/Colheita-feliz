@@ -121,7 +121,7 @@ function jogar() {
 
   for (let i = obstaculos.length - 1; i >= 0; i--) {
     obstaculos[i].x -= velocidade;
-    textSize(32);
+    textSize(31);
     text(obstaculos[i].emoji, obstaculos[i].x, obstaculos[i].y);
 
     if (colidiuComCaminhao(obstaculos[i])) {
