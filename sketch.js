@@ -194,7 +194,7 @@ function reiniciarJogo() {
   obstaculos = [];
   timerItens = 0;
   timerObstaculos = 0;
-  contagemMaça = 0;
+  contagemMelancia = 0;
   contagemMilho = 0;
   contagemCenoura = 0;
   caminhao.y = height / 2;
