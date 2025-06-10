@@ -57,7 +57,7 @@ function telaInicial() {
   rect(0, 0, width, height);
   fill(255);
   textSize(36);
-  text("🚛Race of crazy emojis👾", width / 2, height / 2 - 60);
+  text("🚛 Corrida da Colheita 🐄", width / 2, height / 2 - 60);
   textSize(20);
   text("Use as setas ↑ e ↓ para mover o caminhão", width / 2, height / 2 - 10);
   text("Colete os alimentos e evite os obstáculos!", width / 2, height / 2 + 20);
@@ -85,7 +85,7 @@ function jogar() {
     alimentos.push({
       x: width + random(50, 150),
       y: random(50, height - 100),
-      emoji: random(["🍉", "🌽", "🥕"])
+      emoji: random(["🍎", "🌽", "🥕"])
     });
     timerItens = 0;
   }
@@ -94,7 +94,7 @@ function jogar() {
     obstaculos.push({
       x: width + random(50, 150),
       y: random(50, height - 100),
-      emoji: random(["🦠", "🌹"])
+      emoji: random(["🕳️", "🐄"])
     });
     timerObstaculos = 0;
   }
@@ -107,7 +107,7 @@ function jogar() {
     if (colidiuComCaminhao(alimentos[i])) {
       pontuacao++;
       switch (alimentos[i].emoji) {
-        case "🍉": contagemMelancia++; break;
+        case "🍎": contagemMaça++; break;
         case "🌽": contagemMilho++; break;
         case "🥕": contagemCenoura++; break;
       }
@@ -121,7 +121,7 @@ function jogar() {
 
   for (let i = obstaculos.length - 1; i >= 0; i--) {
     obstaculos[i].x -= velocidade;
-    textSize(31);
+    textSize(32);
     text(obstaculos[i].emoji, obstaculos[i].x, obstaculos[i].y);
 
     if (colidiuComCaminhao(obstaculos[i])) {
@@ -132,7 +132,7 @@ function jogar() {
         jogoAtivo = false;
         if (pontuacao > recorde) {
           recorde = pontuacao;
-          storeItem("recorde", trofeus);
+          storeItem("recorde", recorde);
         }
         musica.stop();
       }
@@ -144,7 +144,7 @@ function jogar() {
   fill(0);
   textSize(18);
   textAlign(LEFT);
-  text("🍉: " + contagemMelancia, 10, 20);
+  text("🍎: " + contagemMaça, 10, 20);
   text("🌽: " + contagemMilho, 10, 45);
   text("🥕: " + contagemCenoura, 10, 70);
   textAlign(RIGHT);
@@ -164,10 +164,10 @@ function telaGameOver() {
   fill(255);
   textSize(36);
   textAlign(CENTER, CENTER);
-  text("Too slow... Try again loser!", width / 2, height / 2 - 150);
+  text("Fim de jogo!", width / 2, height / 2 - 150);
   textSize(24);
   text("Pontuação: " + pontuacao, width / 2, height / 2 - 50);
-  text("🍉 Melancias: " + contagemMelancia, width / 2, height / 2 - 20);
+  text("🍎 Maçãs: " + contagemMaça, width / 2, height / 2 - 20);
   text("🌽 Milhos: " + contagemMilho, width / 2, height / 2 + 10);
   text("🥕 Cenouras: " + contagemCenoura, width / 2, height / 2 + 40);
   text("🏆 Recorde: " + recorde, width / 2, height / 2 + 80);
@@ -194,7 +194,7 @@ function reiniciarJogo() {
   obstaculos = [];
   timerItens = 0;
   timerObstaculos = 0;
-  contagemMelancia = 0;
+  contagemMaça = 0;
   contagemMilho = 0;
   contagemCenoura = 0;
   caminhao.y = height / 2;
