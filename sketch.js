@@ -94,7 +94,7 @@ function jogar() {
     obstaculos.push({
       x: width + random(50, 150),
       y: random(50, height - 100),
-      emoji: random(["🕳️", "🐄"])
+      emoji: random(["🦠", "🌹"])
     });
     timerObstaculos = 0;
   }
